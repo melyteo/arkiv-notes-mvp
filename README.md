@@ -58,6 +58,11 @@ Antes de enviar, verificar:
 4. Pitch en espanol.
 5. Form de entrega completado: https://forms.arkiv.network/punatech26
 
+## Pitch deck
+
+- Deck editable (Markdown): [docs/pitch-deck.md](docs/pitch-deck.md)
+- Repo del proyecto: https://github.com/melyteo/arkiv-notes-mvp
+
 ## Requisitos
 
 - Node.js 20+
