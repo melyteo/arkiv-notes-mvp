@@ -7,6 +7,7 @@ import { ZodError } from "zod";
 
 import {
   archiveNote,
+  createLegalMockNotes,
   createNote,
   restoreNote,
   updateNote,
@@ -185,4 +186,26 @@ export async function restoreNoteAction(formData: FormData) {
 
   revalidatePath("/");
   await redirectWithState("success", "Nota restaurada en Arkiv.");
+}
+
+export async function createMockNotesAction() {
+  try {
+    const result = await createLegalMockNotes();
+
+    revalidatePath("/");
+
+    if (result.created === 0) {
+      await redirectWithState(
+        "error",
+        "No se pudieron crear notas mock en Arkiv. Revisa entorno y saldo de la wallet.",
+      );
+    }
+
+    await redirectWithState(
+      "success",
+      `Demo mock completada: ${result.created}/${result.attempted} notas creadas en Arkiv${result.failed ? `, ${result.failed} fallida(s)` : ""}.`,
+    );
+  } catch (error) {
+    await redirectWithState("error", getNoteMutationErrorMessage(error));
+  }
 }

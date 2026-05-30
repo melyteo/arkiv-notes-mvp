@@ -22,6 +22,32 @@ Proyecto preparado para la track de IA sobre Arkiv del hackathon:
 - Login con Privy para onboarding rapido.
 - Demo desplegada en Vercel y accesible por URL publica.
 
+## Demo mock en la pagina
+
+En el bloque "Nueva nota" hay un boton llamado "Cargar demo mock".
+
+- Ese boton ejecuta una accion de servidor que crea notas legales de ejemplo en Arkiv.
+- Sirve para poblar rapido el feed y mostrar el flujo sin cargar todo manualmente.
+- Requiere entorno Arkiv completo (atributo de proyecto + wallet de escritura).
+
+URL de demo: https://arkiv-notes-mvp.vercel.app
+
+## Proof de transacciones en Braga
+
+Proyecto de pruebas usado: `arkiv-notes-mvp-prod-20260530`
+
+Prueba ejecutada con script de proof (create + update) sobre Braga testnet:
+
+- Note ID: `48d7b356-b05b-4235-80ee-42b3c335d3f6`
+- Entity Key: `0xebc72ce204d1076999afc80a64e8edf9b5679a13e3050513ddf3cda2815467bb`
+- Create tx hash: `0x483e2056572993e273183a3e882fdefa33926f673b0bf88eede2281a2ec77cd7`
+- Update tx hash: `0xe59e57f49874746bd6af6ccdf720a5e007d543fa438b338c504d897a9207f111`
+
+Links de verificacion:
+
+- https://explorer.braga.hoodi.arkiv.network/tx/0x483e2056572993e273183a3e882fdefa33926f673b0bf88eede2281a2ec77cd7
+- https://explorer.braga.hoodi.arkiv.network/tx/0xe59e57f49874746bd6af6ccdf720a5e007d543fa438b338c504d897a9207f111
+
 ## Checklist de entrega (hackathon)
 
 Antes de enviar, verificar:
@@ -95,3 +121,15 @@ Privy en el header e intenta iniciar login automaticamente al cargar sesion.
 - `src/lib/legal/analyzer.ts`: extraccion y analisis legal con fallback de endpoints
 - `src/lib/arkiv.ts`: clientes Arkiv y validacion de entorno
 - `scripts/smoke-arkiv-notes.mjs`: prueba end-to-end contra la red
+
+## Guion pitch (1 minuto)
+
+Hola, somos Arkiv Notas MVP. Construimos una aplicacion web que combina experiencia de producto con trazabilidad on-chain para equipos legales.
+
+En la pantalla principal podes iniciar sesion con Privy y ver el estado de configuracion de Arkiv. Cuando el entorno esta listo, creas notas con titulo, coleccion, etiquetas y contenido. Cada nota se guarda en Arkiv Braga con atributos consultables, para que despues puedas filtrar por estado, coleccion o texto.
+
+Si queres una demo rapida, usamos el boton Cargar demo mock, que genera casos de ejemplo y llena el feed en segundos.
+
+Ademas, la app incluye un analizador legal de PDF y TXT. Subis un documento, detectamos clausulas de riesgo por severidad y mostramos sugerencias accionables.
+
+La propuesta de valor es simple: memoria legal estructurada, verificable y portable, con una UX moderna, lista para operar hoy en testnet y escalar a produccion.

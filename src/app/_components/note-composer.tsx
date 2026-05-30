@@ -4,7 +4,7 @@ import { useFormStatus } from "react-dom";
 
 import type { ArkivConfigStatus } from "@/lib/arkiv";
 
-import { createNoteAction } from "@/app/actions";
+import { createMockNotesAction, createNoteAction } from "@/app/actions";
 
 function SubmitButton({ isReady }: { isReady: boolean }) {
   const { pending } = useFormStatus();
@@ -24,6 +24,20 @@ function SubmitButton({ isReady }: { isReady: boolean }) {
   );
 }
 
+function MockSeedButton({ isReady }: { isReady: boolean }) {
+  const { pending } = useFormStatus();
+
+  return (
+    <button
+      type="submit"
+      className="inline-flex items-center justify-center rounded-full border border-[var(--line)] bg-[var(--surface)] px-4 py-2 text-xs font-semibold text-[var(--foreground)] transition hover:border-[var(--accent)] hover:text-[var(--accent-strong)] disabled:cursor-not-allowed disabled:opacity-60"
+      disabled={!isReady || pending}
+    >
+      {pending ? "Cargando demo..." : "Cargar demo mock"}
+    </button>
+  );
+}
+
 export function NoteComposer({ config }: { config: ArkivConfigStatus }) {
   return (
     <div id="composer" className="panel-shell rise-in reveal-block p-6" style={{ animationDelay: "120ms" }}>
@@ -34,8 +48,13 @@ export function NoteComposer({ config }: { config: ArkivConfigStatus }) {
           </p>
           <h2 className="mt-2 text-2xl font-semibold">Nueva nota</h2>
         </div>
-        <div className="od-chip">
-          {config.isFullyConfigured ? "Wallet lista" : "Entorno pendiente"}
+        <div className="flex items-center gap-2">
+          <div className="od-chip">
+            {config.isFullyConfigured ? "Wallet lista" : "Entorno pendiente"}
+          </div>
+          <form action={createMockNotesAction}>
+            <MockSeedButton isReady={config.isFullyConfigured} />
+          </form>
         </div>
       </div>
 
