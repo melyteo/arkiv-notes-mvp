@@ -63,6 +63,24 @@ Antes de enviar, verificar:
 - Deck editable (Markdown): [docs/pitch-deck.md](docs/pitch-deck.md)
 - Repo del proyecto: https://github.com/melyteo/arkiv-notes-mvp
 
+## Pitch deck grafico (README)
+
+```mermaid
+flowchart TD
+	S1[1. Problema<br/>Contexto legal fragmentado] --> S2[2. Solucion<br/>Memoria legal verificable]
+	S2 --> S3[3. Producto<br/>Notas + filtros + analizador]
+	S3 --> S4[4. Arkiv usage<br/>Entities + attributes + TTL]
+	S4 --> S5[5. Proof on Braga<br/>Tx create y update]
+	S5 --> S6[6. Demo flow<br/>Privy + Cargar demo mock]
+	S6 --> S7[7. Arquitectura<br/>Next.js + Privy + Arkiv + Vercel]
+	S7 --> S8[8. Roadmap<br/>Multiusuario + busqueda + dashboard]
+	S8 --> S9[9. Cierre<br/>Memoria legal portable y auditable]
+```
+
+Version completa slide-by-slide:
+
+- [docs/pitch-deck.md](docs/pitch-deck.md)
+
 ## Requisitos
 
 - Node.js 20+
