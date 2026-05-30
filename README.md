@@ -1,7 +1,7 @@
 # Arkiv Notas MVP
 
-Aplicacion Next.js para gestionar notas en Arkiv (Braga testnet), con lectura
-publica, escritura con wallet y analisis legal de documentos (PDF/TXT).
+Memoria legal verificable: crea, consulta y analiza documentos con trazabilidad
+on-chain sobre Arkiv Braga.
 
 ## Contexto hackathon
 
@@ -31,6 +31,24 @@ En el bloque "Nueva nota" hay un boton llamado "Cargar demo mock".
 - Requiere entorno Arkiv completo (atributo de proyecto + wallet de escritura).
 
 URL de demo: https://arkiv-notes-mvp.vercel.app
+
+## Demo visual paso a paso
+
+### 1) Vista general del producto
+
+![Vista general de Arkiv Notas MVP](docs/images/demo/01-overview.png)
+
+### 2) Entorno Arkiv listo para escribir
+
+![Panel de readiness Arkiv en 100 por ciento](docs/images/demo/02-readiness.png)
+
+### 3) Carga rapida de casos con demo mock
+
+![Formulario de nueva nota con boton Cargar demo mock](docs/images/demo/03-composer-mock.png)
+
+### 4) Analisis legal de PDF y TXT
+
+![Modulo de analisis legal de documentos](docs/images/demo/04-legal-analyzer.png)
 
 ## Proof de transacciones en Braga
 
@@ -144,15 +162,3 @@ Privy en el header e intenta iniciar login automaticamente al cargar sesion.
 - `src/lib/legal/analyzer.ts`: extraccion y analisis legal con fallback de endpoints
 - `src/lib/arkiv.ts`: clientes Arkiv y validacion de entorno
 - `scripts/smoke-arkiv-notes.mjs`: prueba end-to-end contra la red
-
-## Guion pitch (1 minuto)
-
-Hola, somos Arkiv Notas MVP. Construimos una aplicacion web que combina experiencia de producto con trazabilidad on-chain para equipos legales.
-
-En la pantalla principal podes iniciar sesion con Privy y ver el estado de configuracion de Arkiv. Cuando el entorno esta listo, creas notas con titulo, coleccion, etiquetas y contenido. Cada nota se guarda en Arkiv Braga con atributos consultables, para que despues puedas filtrar por estado, coleccion o texto.
-
-Si queres una demo rapida, usamos el boton Cargar demo mock, que genera casos de ejemplo y llena el feed en segundos.
-
-Ademas, la app incluye un analizador legal de PDF y TXT. Subis un documento, detectamos clausulas de riesgo por severidad y mostramos sugerencias accionables.
-
-La propuesta de valor es simple: memoria legal estructurada, verificable y portable, con una UX moderna, lista para operar hoy en testnet y escalar a produccion.
