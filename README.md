@@ -3,6 +3,33 @@
 Memoria legal verificable: crea, consulta y analiza documentos con trazabilidad
 on-chain sobre Arkiv Braga.
 
+## Snapshot
+
+Arkiv Notas MVP convierte notas legales en memoria operativa auditable:
+
+- Escritura y consulta sobre Arkiv Braga
+- Flujo legal completo: crear, actualizar, archivar, restaurar
+- Analizador de PDF/TXT para detectar clausulas de riesgo
+- Demo productiva con onboarding via Privy
+
+Demo en vivo: https://arkiv-notes-mvp.vercel.app
+
+## KPI y traction
+
+| Indicador | Estado actual |
+| --- | --- |
+| Entorno Arkiv en produccion | 100% listo |
+| Transacciones verificadas en Braga | 2 hashes de prueba (create + update) |
+| Flujo CRUD de entidades | Implementado y operativo |
+| Demo visual documentada | 4 capturas paso a paso en este README |
+| Hosting | Vercel (URL publica activa) |
+
+## Tesis del producto
+
+Equipos legales necesitan algo mas que notas: necesitan contexto portable,
+filtros confiables y evidencia verificable de como evolucionan las decisiones.
+Arkiv Notas MVP resuelve ese gap con UX de producto y capa de datos on-chain.
+
 ## Contexto hackathon
 
 Proyecto preparado para la track de IA sobre Arkiv del hackathon:
